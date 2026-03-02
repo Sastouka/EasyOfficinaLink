@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EasyOfficinaLink — Gestion intelligente de pharmacie</title>
+
+<meta name="description" content="EasyOfficinaLink - Logiciel professionnel de gestion de pharmacie, stock, caisse et ordonnances.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="EasyOfficinaLink">
+<meta property="og:description" content="La gestion de pharmacie nouvelle génération">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#16a085;
+  --secondary:#0f766e;
+  --dark:#0f172a;
+  --light:#f8fafc;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--light);
+  color:#1e293b;
+  line-height:1.6;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  background:white;
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:var(--primary);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+.cta{
+  background:var(--primary);
+  color:white;
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.25s;
+}
+
+.cta:hover{background:var(--secondary);}
+
+/* HERO */
+.hero{
+  padding:90px 8%;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:44px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:30px;
+  color:#475569;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn-secondary{
+  background:white;
+  border:2px solid var(--primary);
+  color:var(--primary);
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.mockup{
+  background:linear-gradient(135deg,#d1fae5,#ecfeff);
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* APP SHOWCASE */
+.app-showcase{
+  padding:90px 8%;
+  background:#ffffff;
+}
+
+.app-header{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.app-icon{
+  width:110px;
+  border-radius:28px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  margin-bottom:15px;
+}
+
+.screens-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.screen-card{
+  border-radius:22px;
+  overflow:hidden;
+  background:#f1f5f9;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  transition:.35s;
+}
+
+.screen-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 25px 60px rgba(0,0,0,0.15);
+}
+
+.screen-card img{
+  width:100%;
+  display:block;
+}
+
+/* FEATURES */
+.section{
+  padding:80px 8%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:50px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:28px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+/* CTA BAND */
+.cta-band{
+  background:linear-gradient(135deg,#16a085,#0f766e);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+
+/* FOOTER */
+.footer{
+  background:var(--dark);
+  color:#cbd5e1;
+  padding:50px 8%;
+}
+
+.footer a{
+  color:#a7f3d0;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .menu-toggle{display:block;}
+
+  .nav-links{
+    position:absolute;
+    right:0;
+    top:70px;
+    background:white;
+    flex-direction:column;
+    width:220px;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    display:none;
+  }
+
+  .nav-links.active{display:flex;}
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero h1{font-size:34px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo">EasyOfficinaLink</div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#features">Fonctionnalités</a>
+    <a href="#" class="cta">Demander une démo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>La gestion de pharmacie nouvelle génération</h1>
+    <p>
+      EasyOfficinaLink digitalise votre pharmacie avec une solution rapide,
+      intelligente et conçue pour les réalités africaines.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#" class="cta">Demander une démo</a>
+      <a href="#features" class="btn-secondary">Voir les fonctionnalités</a>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <strong>Interface EasyOfficinaLink</strong><br>
+    Solution moderne pour pharmacies
+  </div>
+</section>
+
+<!-- APP SHOWCASE -->
+<section class="app-showcase">
+
+  <div class="app-header">
+    <img src="icon.png" alt="EasyOfficinaLink icône" class="app-icon">
+    <h2 class="section-title">Découvrez EasyOfficinaLink en action</h2>
+    <p style="color:#64748b; max-width:700px; margin:auto;">
+      Une interface moderne, rapide et conçue pour les pharmacies africaines.
+    </p>
+  </div>
+
+  <div class="screens-grid">
+
+    <div class="screen-card"><img src="Screen1.jpeg" alt=""></div>
+    <div class="screen-card"><img src="Screen2.jpeg" alt=""></div>
+    <div class="screen-card"><img src="Screen3.jpeg" alt=""></div>
+    <div class="screen-card"><img src="Screen4.jpeg" alt=""></div>
+    <div class="screen-card"><img src="Screen6.jpeg" alt=""></div>
+    <div class="screen-card"><img src="Screen51.jpeg" alt=""></div>
+
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="section">
+  <h2 class="section-title">Fonctionnalités clés</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Gestion intelligente du stock</h3>
+      <p>Suivi précis des médicaments avec alertes automatiques.</p>
+    </div>
+
+    <div class="card">
+      <h3>Alerte rupture & péremption</h3>
+      <p>Anticipez les ruptures et évitez les pertes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Lecture code-barres</h3>
+      <p>Scan rapide via caméra pour une saisie instantanée.</p>
+    </div>
+
+    <div class="card">
+      <h3>Caisse rapide</h3>
+      <p>Encaissement fluide et sécurisé en quelques secondes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Bilan financier</h3>
+      <p>Statistiques claires pour piloter votre rentabilité.</p>
+    </div>
+
+    <div class="card">
+      <h3>Gestion des ordonnances</h3>
+      <p>Suivi patient et conformité médicale intégrée.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>Prêt à moderniser votre pharmacie ?</h2>
+  <a href="#" class="cta">Commencer maintenant</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <strong>EasyOfficinaLink</strong>
+  <p>Solution professionnelle de gestion de pharmacie.</p>
+
+  <div class="footer-bottom">
+    © <span id="year"></span>EasyOfficinaLink — SASTOUKA DIGITAL. Tous droits réservés.<br><br>
+    <a href="guide.html">Guide d’utilisation</a> |
+    <a href="mentions-legales.html">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
