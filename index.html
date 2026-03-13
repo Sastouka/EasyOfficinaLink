@@ -20,6 +20,22 @@
     
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1993448841602507'); // REMPLACEZ PAR VOTRE ID RÉEL
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1993448841602507&ev=PageView&noscript=1"/>
+    </noscript>
+
     <style>
         /* -----------------------------------------------------------
            PALETTE DE COULEURS & VARIABLES
@@ -198,6 +214,19 @@
 </head>
 <body>
 
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #0f172a; color: white; padding: 20px; z-index: 10005; display: none; box-shadow: 0 -5px 15px rgba(0,0,0,0.3);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <p style="margin: 0; font-size: 0.9rem; flex: 1;">
+                Nous utilisons des cookies et le Pixel Facebook pour optimiser votre expérience sur notre site. En continuant, vous acceptez notre 
+                <a href="mentions-legales.html" style="color: #fca5a5; text-decoration: underline;">politique de confidentialité</a>.
+            </p>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="acceptCookies()" style="background: var(--accent-emerald); color: white; border: none; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-weight: 700;">Accepter</button>
+                <button onclick="closeCookieBanner()" style="background: transparent; color: white; border: 1px solid white; padding: 10px 20px; border-radius: 50px; cursor: pointer;">Fermer</button>
+            </div>
+        </div>
+    </div>
+
     <div id="lightbox" class="lightbox-overlay">
         <div class="lightbox-controls">
             <button class="lightbox-btn" onclick="zoomImage(0.2)" title="Zoom Avant"><i class="fas fa-plus"></i></button>
@@ -370,9 +399,7 @@
                     <p class="review-quote">"Une solution locale parfaite pour notre officine. L'absence d'abonnement mensuel et la rapidité du réseau local en font un outil indispensable."</p>
                     <div class="review-author">
                         <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <h4>Amadou</h4>
-                        </div>
+                        <div class="author-info"><h4>Amadou</h4></div>
                     </div>
                 </div>
 
@@ -381,9 +408,7 @@
                     <p class="review-quote">"L'application Android pour l'inventaire m'a fait gagner un temps précieux. Scanner les boîtes directement avec l'appareil photo est une idée de génie !"</p>
                     <div class="review-author">
                         <div class="author-avatar">F</div>
-                        <div class="author-info">
-                            <h4>Fatou</h4>
-                        </div>
+                        <div class="author-info"><h4>Fatou</h4></div>
                     </div>
                 </div>
 
@@ -392,9 +417,7 @@
                     <p class="review-quote">"Très bon logiciel. Le suivi rigoureux de l'ordonnancier et la gestion simplifiée des mutuelles ont considérablement allégé notre charge administrative."</p>
                     <div class="review-author">
                         <div class="author-avatar">K</div>
-                        <div class="author-info">
-                            <h4>Koffi</h4>
-                        </div>
+                        <div class="author-info"><h4>Koffi</h4></div>
                     </div>
                 </div>
 
@@ -403,9 +426,7 @@
                     <p class="review-quote">"Le bilan financier généré automatiquement me permet de suivre ma rentabilité au jour le jour avec une précision redoutable. Excellent travail."</p>
                     <div class="review-author">
                         <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <h4>Awa</h4>
-                        </div>
+                        <div class="author-info"><h4>Awa</h4></div>
                     </div>
                 </div>
 
@@ -414,9 +435,7 @@
                     <p class="review-quote">"L'alerte des péremptions m'a sauvé plus d'une fois de pertes financières. L'interface est très facile à prendre en main par toute l'équipe."</p>
                     <div class="review-author">
                         <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h4>Mamadou</h4>
-                        </div>
+                        <div class="author-info"><h4>Mamadou</h4></div>
                     </div>
                 </div>
 
@@ -425,56 +444,9 @@
                     <p class="review-quote">"Enfin un logiciel sans cloud ruineux ! L'installation réseau s'est faite en quelques minutes. Mes données restent en sécurité sur mon ordinateur."</p>
                     <div class="review-author">
                         <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <h4>Mariam</h4>
-                        </div>
+                        <div class="author-info"><h4>Mariam</h4></div>
                     </div>
                 </div>
-                
-                <div class="review-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-quote">"Le scan des codes-barres est hyper réactif, que ce soit sur PC ou via smartphone. Le suivi des performances des employés est également un grand plus."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">O</div>
-                        <div class="author-info">
-                            <h4>Ousmane</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="review-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-quote">"Un support technique réactif via WhatsApp. La gestion de trésorerie (recettes, dépenses, salaires) intégrée évite de devoir utiliser un autre logiciel de compta."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">A</div>
-                        <div class="author-info">
-                            <h4>Aminata</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="review-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                    <p class="review-quote">"Le design est épuré, fluide et très moderne, loin des vieux logiciels d'officine surchargés. On trouve ce qu'on cherche en deux clics."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">C</div>
-                        <div class="author-info">
-                            <h4>Cheikh</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="review-quote">"Synchronisation instantanée entre le PC serveur au comptoir et mon téléphone en réserve. Toute l'équipe s'est adaptée le jour même."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">B</div>
-                        <div class="author-info">
-                            <h4>Binta</h4>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -494,11 +466,16 @@
             <div class="footer-links">
                 <a href="guide.html" target="_blank"><i class="fas fa-book"></i> Guide d'utilisation</a>
                 <a href="mentions-legales.html" target="_blank"><i class="fas fa-gavel"></i> Mentions Légales</a>
+                <a href="mentions-legales.html" target="_blank"><i class="fas fa-user-shield"></i> Politique de Confidentialité</a>
             </div>
 
             <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 20px;">
-                <p style="font-size: 1rem; color: white;">© 2026 EasyOfficinaLink. Tous droits réservés.</p>
-                <p style="font-size: 0.9rem;">Contact / WhatsApp : +212 652 084 735</p>
+                <p style="font-size: 1rem; color: white;">© 2026 EasyOfficinaLink. Développé par  SASTOUKA DIGITAL. Tous droits réservés.</p>
+                <p style="font-size: 0.9rem; margin-bottom: 15px;">Contact / WhatsApp : +212 652 084 735</p>
+                
+                <p style="font-size: 0.75rem; color: #64748b; max-width: 800px; margin: 0 auto; line-height: 1.5;">
+                    Ce site ne fait pas partie du site Web de Facebook ou de Meta Platforms, Inc. De plus, ce site n'est en aucun cas approuvé par Facebook. FACEBOOK est une marque de commerce de META PLATFORMS, Inc.
+                </p>
             </div>
         </div>
     </footer>
@@ -515,7 +492,7 @@
             navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(err => console.log('Erreur PWA:', err));
         }
 
-        // --- LOGIQUE LIGHTBOX AVEC ZOOM (MISE À JOUR AVEC TACTILE) ---
+        // --- LOGIQUE LIGHTBOX AVEC ZOOM TACTILE ---
         let scale = 1, isDragging = false;
         let startX, startY, currentTranslateX = 0, currentTranslateY = 0, prevTranslateX = 0, prevTranslateY = 0;
         let initialDistance = 0, initialScale = 1;
@@ -544,7 +521,6 @@
             updateTransform();
         }
 
-        // --- GESTION SOURIS ---
         container.addEventListener('mousedown', (e) => {
             if(scale <= 1) return; 
             isDragging = true; startX = e.clientX; startY = e.clientY;
@@ -566,35 +542,26 @@
             e.preventDefault(); if (e.deltaY < 0) zoomImage(0.1); else zoomImage(-0.1);
         }, { passive: false });
 
-        // --- GESTION TACTILE (SMARTPHONES) ---
         container.addEventListener('touchstart', (e) => {
             if (e.touches.length === 2) {
-                // Pinch to zoom (Début)
                 isDragging = false;
                 initialDistance = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
                 initialScale = scale;
                 img.style.transition = 'none';
             } else if (e.touches.length === 1 && scale > 1) {
-                // Drag (Début)
-                isDragging = true;
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-                img.style.transition = 'none';
+                isDragging = true; startX = e.touches[0].clientX; startY = e.touches[0].clientY; img.style.transition = 'none';
             }
         }, { passive: false });
 
         container.addEventListener('touchmove', (e) => {
-            e.preventDefault(); // Empêche le défilement de la page derrière
+            e.preventDefault();
             if (e.touches.length === 2) {
-                // Pinch to zoom (En cours)
                 const currentDistance = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
                 const pinchScale = currentDistance / initialDistance;
                 scale = initialScale * pinchScale;
-                if (scale < 0.5) scale = 0.5;
-                if (scale > 4) scale = 4;
+                if (scale < 0.5) scale = 0.5; if (scale > 4) scale = 4;
                 updateTransform();
             } else if (e.touches.length === 1 && isDragging) {
-                // Drag (En cours)
                 currentTranslateX = prevTranslateX + (e.touches[0].clientX - startX);
                 currentTranslateY = prevTranslateY + (e.touches[0].clientY - startY);
                 updateTransform();
@@ -603,21 +570,16 @@
 
         container.addEventListener('touchend', (e) => {
             if (isDragging || e.touches.length < 2) {
-                isDragging = false;
-                prevTranslateX = currentTranslateX;
-                prevTranslateY = currentTranslateY;
+                isDragging = false; prevTranslateX = currentTranslateX; prevTranslateY = currentTranslateY;
                 img.style.transition = 'transform 0.1s ease-out';
-                
-                // Si l'utilisateur a dézoomé en dessous de 1, on remet par défaut
-                if (scale < 1 && e.touches.length === 0) {
-                    resetZoom();
-                }
+                if (scale < 1 && e.touches.length === 0) resetZoom();
             }
         });
 
         // --- DRAG & DROP BOUTONS FLOTTANTS ---
         function makeDraggable(elementId) {
             const elmnt = document.getElementById(elementId);
+            if(!elmnt) return;
             let pos1=0, pos2=0, pos3=0, pos4=0;
             elmnt.onmousedown = dragMouseDown;
             elmnt.addEventListener('touchstart', dragMouseDown, {passive: false});
@@ -641,9 +603,51 @@
             }
         }
 
+        // --- GESTION COOKIES ---
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+            if(typeof fbq === 'function') fbq('trackCustom', 'ConsentementCookies');
+        }
+        function closeCookieBanner() {
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             makeDraggable("dragWhatsapp");
             makeDraggable("dragDownloads");
+
+            // Affichage bandeau cookies si non accepté
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+
+            // --- TRACKING DES ÉVÉNEMENTS FACEBOOK ADS ---
+            
+            // 1. Suivi des téléchargements
+            document.querySelectorAll('a[href*=".zip"], a[href*=".apk"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const platform = this.href.includes('.zip') ? 'PC_Windows' : 'Mobile_Android';
+                    if(typeof fbq === 'function') {
+                        fbq('trackCustom', 'DownloadAttempt', { platform: platform });
+                    }
+                });
+            });
+
+            // 2. Suivi clic WhatsApp
+            const waBtn = document.querySelector('#dragWhatsapp a');
+            if(waBtn) {
+                waBtn.addEventListener('click', () => {
+                    if(typeof fbq === 'function') fbq('track', 'Contact', { method: 'WhatsApp' });
+                });
+            }
+
+            // 3. Suivi du temps passé sur la page (> 30 secondes)
+            setTimeout(() => {
+                if(typeof fbq === 'function') {
+                    fbq('trackCustom', 'HighInterestUser', { duration: '30s' });
+                }
+            }, 30000);
         });
     </script>
 </body>
